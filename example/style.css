@@ -1,0 +1,41 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	min-height: 100vh;
+	background: #f6f7f8;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#form {
+	display: flex;
+	flex-direction: column;
+	margin: 30px;
+}
+#status {
+	margin: 10px 0;
+}
+#amount {
+	font-size: 16px;
+	padding: 8px 12px;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 7px 15px rgba(0, 9, 128, 0.05), 0 12px 28px rgba(0, 9, 128, 0.075);
+	outline: none;
+}
+#currency {
+	margin: 10px 0;
+}
+button.pay {
+	color: #fff;
+	text-transform: uppercase;
+	padding: .6rem 1.5rem;
+	border: none;
+	border-radius: 50rem;
+	background: linear-gradient(45deg, #8089ff 0%, #54ceff 100%);
+	box-shadow: 0 7px 15px rgba(0, 9, 128, 0.05), 0 12px 28px rgba(0, 9, 128, 0.075), inset 0 1px 1px rgba(255, 255, 255, 0.1), inset 0 -1px 1px rgba(0, 0, 0, 0.075);
+	cursor: pointer;
+	outline: none;
+}

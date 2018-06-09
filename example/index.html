@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Payment Widget</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+  	<body>
+		
+		<form id="form">
+			<div id="status">Status: unpaid</div>
+			<input type="number" id="amount" required value="5.99" placeholder="Amount">
+			
+			<select type="text" id="currency" required>
+				<option value="USD" selected>USD</option>
+				<option value="EUR">EUR</option>
+				<option value="JPY">JPY</option>
+				<option value="GBP">GBP</option>
+				<option value="UAH">UAH</option>
+			</select>
+
+			<button type="submit" class="pay">PAY</button>
+		</form>
+
+		<div id="widget"></div>
+	
+		<script type="text/javascript" src="widget.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>
