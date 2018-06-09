@@ -21,4 +21,4 @@ export const init = (config, rootId) => {
 	})
 }
 
-// init({ amount: 119.99, currency: 'USD' }, 'widget').then(res => res.destroy())
+init({ amount: 119.99, currency: 'USD' }, 'widget').then(res => res.destroy())

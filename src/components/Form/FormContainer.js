@@ -26,14 +26,33 @@ export default class FormContainer extends Component {
 				value: '',
 				error: '',
 				validate: input => {
-					if (input.length < 19) {
-						return input.replace(/[^0-9]/g, "").replace(/(.{4})/gi, (value, _, i, str) => {
+					if (input.length <= 19) {
+						return input.replace(/\D/g, "").replace(/(.{4})/gi, (value, _, i, str) => {
 							return str.length - i === 4 ? value : value + ' '
 						})
 					}
 					return input
 				},
-				isValid: input => input.length === 19 ? '' : 'Card number is not valid. Check it once more.'
+				isValid: input => {
+					if (input.length !== 19)
+						return 'Card number format is wrong'
+
+					const arr = [0, 2, 4, 6, 8, 1, 3, 5, 7, 9]
+					const num = input.replace(/\D/g, "")
+
+					// luhn check
+					let len = num.length, bit = 1, sum = 0, val
+					
+					while (len) {
+						val = parseInt(num.charAt(--len), 10)
+						sum += (bit ^= 1) ? arr[val] : val
+					}
+			
+					if (sum && sum % 10 !== 0)
+						return 'Card number is not valid with Luhn format'
+
+					return ''
+				}
 			}, {
 				label: 'Expiration Date',
 				placeholder: '12/19',
